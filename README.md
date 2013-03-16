@@ -23,25 +23,25 @@ fetching.
 
 Usage: GetOutlook.py [options]
 
-Options:
-  -h, --help            show this help message and exit
-  --config-file=CONFIGFILE
-                        Configuration file (mandatory)
-  --verbosity=VERBOSITY
-                        Verbosity of messages (1/2/10/100)
+    Options:
+        -h, --help             show this help message and exit
+        --config-file=CONFIGFILE
+                               Configuration file (mandatory)
+        --verbosity=VERBOSITY
+                               Verbosity of messages (1/2/10/100)
 
 ## Config file
 
 Config file:
 
-Username = user.name                
-Domain = outlook.com
-Password = your_secret_password
-Downloaded = download.txt           (for old Getlive accounts)
-DestinationDir = /path/to/mail      (directory to store email)
-StatusFile = status.txt             (new format downloaded messages)
-BreakOnAlreadyDownloaded = 40       (break pagescan when seen number of
-                                     existing messages, 0 = always scan)
+    Username = user.name                
+    Domain = outlook.com
+    Password = your_secret_password
+    Downloaded = download.txt           (for old Getlive accounts)
+    DestinationDir = /path/to/mail      (directory to store email)
+    StatusFile = status.txt             (new format downloaded messages)
+    BreakOnAlreadyDownloaded = 40       (break pagescan when seen number of
+                                         existing messages, 0 = always scan)
                   
 Every option in mandatory, except Downloaded and BreakOnAlreadyDownloaded
 
