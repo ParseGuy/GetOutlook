@@ -1,0 +1,6 @@
+Username = your.user.name
+Domain = outlook.com
+Password = your.pass.word
+BreakOnAlreadyDownloaded = 40
+StatusFile = status.txt
+DestinationDir = /path/to/mail
