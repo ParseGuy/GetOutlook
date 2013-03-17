@@ -45,6 +45,16 @@ Config file:
                   
 Every option in mandatory, except Downloaded and BreakOnAlreadyDownloaded
 
+## Donations
+
+GetOutlook was written in sole effort to get you the mail backup you need.
+If you have the means, please support me with a donation. More donations mean
+more time to support you, add features and feel happy about yourself!
+
+### Donate via PayPal
+
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8U34AKDF35D8E)
+
 ## Feedback
 
 Please leave feedback at github page(https://github.com/ParseGuy/GetOutlook/)
