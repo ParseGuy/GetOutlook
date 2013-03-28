@@ -11,7 +11,6 @@ from email.generator import Generator
 
 import logging
 import re
-import mechanize
 import urllib
 import sys
 import HTMLParser
@@ -22,6 +21,9 @@ import HTMLParser
 import shelve
 import codecs
 import json
+
+# extra libraries needed
+import mechanize
 
 logger = logging.getLogger()
 
@@ -113,12 +115,14 @@ class Outlook:
         return response
 
     def getcookie(self, name):
+        ''' gets cookie from jar '''
         for cookie in self.cj:
             if cookie.name == name:
                 return cookie.value
         return None
 
     def findvar(self, content, name, regex, regexmod=0, logerror=True):
+        ''' finds one or more items with regex from an object '''
         m = re.search(regex, content, regexmod)
         if m:
             v = m.groups()
