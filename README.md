@@ -8,16 +8,18 @@ It is initially based on the work of GetLive
 (http://sourceforge.net/projects/getlive/). The interface almost backwards
 compatible to support drop-in replacement.
 
-The mail will be downloaded in mbox format, which is compatible with many
-mail programs.
+The mail will be downloaded in mbox format, where each foldername is represented as one file.
+Use these files to load in your favorite email program
 
 ## Installation
 
-Get the GetOutlook.py file and install the required python modules
-(mechanize etc) with your favorite python package installer.
+Use a Python 2.7 installation and install 2 extra packages (mechanize and configobj) with
 
-Modify the config file with your desired options (see below) and start
-fetching.
+    pip install mechanize
+    pip install configobj
+    
+Download GetOutlook.py with the sample config.
+Modify the config file with your desired options (see below) and start fetching.
 
 ## Usage
 
@@ -34,26 +36,16 @@ Usage: GetOutlook.py [options]
 
 Config file:
 
-    Username = user.name                
-    Domain = outlook.com
-    Password = your_secret_password
-    Downloaded = download.txt           (for old Getlive accounts)
-    DestinationDir = /path/to/mail      (directory to store email)
-    StatusFile = status.txt             (new format downloaded messages)
-    BreakOnAlreadyDownloaded = 40       (break pagescan when seen number of
-                                         existing messages, 0 = always scan)
-                  
+    Username = user.name                (your username)
+    Domain = outlook.com                (the domain of the email address)
+    Password = your_secret_password     (secret)
+    Downloaded = download.txt           (for old Getlive accounts, use this once)
+    DestinationDir = /path/to/mail      (directory to store email in mbox format, folder name as filename)
+    StatusFile = status.txt             (status of of downloaded message ids and a bit more)
+    BreakOnAlreadyDownloaded = 40       (break pagescan when seen number of existing messages, 0 = always scan)
+
+
 Every option in mandatory, except Downloaded and BreakOnAlreadyDownloaded
-
-## Donations
-
-GetOutlook was written in sole effort to get you the mail backup you need.
-If you have the means, please support me with a donation. More donations mean
-more time to support you, add features and feel happy about yourself!
-
-### Donate via PayPal
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8U34AKDF35D8E)
 
 ## Feedback
 
