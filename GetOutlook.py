@@ -33,7 +33,7 @@ class Outlook:
     def __init__(self):
         self.setup()
     description = "Outlook mail fetcher"
-    version = "1.0"
+    version = "1.01"
 
     def setup(self):
         ''' Initializes class with Browser object '''
@@ -163,7 +163,7 @@ class Outlook:
         # find information for the login form
         loginurl = self.findvar(
             r, 'loginurl', "(https://login.live.com/ppsecure/post.srf[^']*)'")
-        ppsx = self.findvar(r, 'PPSX', "F:'(P[^']*)", re.S)
+        ppsx = self.findvar(r, 'PPSX', "AP:'(P[^']*)", re.S) # h: or F: previous
         ppft = self.findvar(r, 'PPFT', '<\s*input\s+.*name=\"PPFT\"\s+id="\S+"?\s+value=\"(\S*)\"')
 
         # only use first part of passwd if contains =
@@ -366,6 +366,8 @@ class Outlook:
                     if not contnextpage and 'BreakOnAlreadyDownloaded' in self.configs and self.configs['BreakOnAlreadyDownLoaded'] > 0 and oldmessages < self.configs['BreakOnAlreadyDownLoaded']:
                         logger.info('Stop scanning for this folder')
                         contnextpage = False
+                    else:
+                         contnextpage = True
 
                     if not self.status['folders'][fid]['foundall'] or contnextpage:  # find out if we need to fetch the page in the first place
                         pagenr += 1
@@ -452,4 +454,4 @@ class Outlook:
 
 
 outlook = Outlook()
-outlook.parseargs() and outlook.dologin() and outlook.detectemail() and outlook.getfolders() and outlook.downloadmessages() and outlook.getmessageids() and outlook.downloadmessages()
+outlook.parseargs() and outlook.dologin() and outlook.getfolders() and outlook.downloadmessages() and outlook.getmessageids() and outlook.downloadmessages()
