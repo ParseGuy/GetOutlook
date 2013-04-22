@@ -363,7 +363,7 @@ class Outlook:
                         else:
                             oldmessages += 1
 
-                    if not contnextpage and 'BreakOnAlreadyDownloaded' in self.configs and self.configs['BreakOnAlreadyDownLoaded'] > 0 and oldmessages < self.configs['BreakOnAlreadyDownLoaded']:
+                    if not contnextpage and 'BreakOnAlreadyDownloaded' in self.configs and int(self.configs['BreakOnAlreadyDownloaded']) > 0 and oldmessages > int(self.configs['BreakOnAlreadyDownloaded']):
                         logger.info('Stop scanning for this folder')
                         contnextpage = False
                     else:
